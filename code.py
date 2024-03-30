@@ -4,6 +4,13 @@ import matplotlib.pyplot as plt
 
 df=pd.read_csv('employee_data.csv')
 df.info()
+
+#Correct the data in the "height" column by replacing it with random numbers between 150 and 180.
+import numpy as np
+df['height']=np.random.randint(150,181,size=len(df))
+print(df['height'].head())
+print(df['height'].tail())
+
 # 1. Distribution of employees across teams and percentage split
 team_counts = df['Team'].value_counts()
 total_employees = len(df)
